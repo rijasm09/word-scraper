@@ -8,5 +8,5 @@ exports.count = string => {
       map[item] = (map[item] + 1) || 1
     }
   
-    return { map, totalWords }
+    return {totalWords }
   }
