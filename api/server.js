@@ -25,7 +25,6 @@ app.post("/", async function (req, res) {
     const content = await fetchUrlContent(url)
     const cleanedContent = clean(content)
     const result = count(cleanedContent)
-    console.log("result in backend"+result.data.result.totalWords);
     res.json({result})
 })
 
