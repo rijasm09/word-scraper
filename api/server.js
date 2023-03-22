@@ -1,7 +1,6 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const appify = require("./app")
 const { fetchUrlContent } = require("./fetch-url-content")
 const { clean } = require("./clean")
 const { count } = require("./count")
@@ -15,7 +14,7 @@ app.use(express.json())
 // })
 
 app.get("/", function (req, res) {
-    res.send({ "name": "Jane Doe" }) // Should be json format
+    res.send({ "name": "K M RIJAS MUHAMMED" }) // Should be json format
 })
 
 app.post("/", async function (req, res) {

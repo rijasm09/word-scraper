@@ -42,11 +42,9 @@ const App = () => {
 
     try {
       const res = await axios.post('http://localhost:3000/', { url }, { timeout: 5000 })
-      console.log("res", res)
+      // console.log("res", res)
       let totalCount = res.data.result.totalWords;
       setResult(totalCount)
-      // setUrl('')
-      console.log("result in api", totalCount);
 
       // Add URL and result to the results array
       const newResult = {
@@ -60,7 +58,6 @@ const App = () => {
     } catch (error) {
       console.log({ error })
     }
-
   };
 
   return (
