@@ -41,9 +41,17 @@ const App = () => {
     console.log({ url })
 
     try {
-      const res = await axios.post('http://localhost:3000/', { url }, { timeout: 5000 })
-      // console.log("res", res)
-      let totalCount = res.data.result.totalWords;
+      const res = await fetch('http://localhost:3000/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      const data = await res.json();
+
+      let totalCount = data.result.totalWords;
       setResult(totalCount)
 
       // Add URL and result to the results array
@@ -67,7 +75,7 @@ const App = () => {
         <br />
         <form onSubmit={(e) => submitHandler(e)}>
           <label>
-           <b>URL : </b> 
+            <b>URL : </b>
             <input
               type="url"
               name="url"
@@ -96,7 +104,7 @@ const App = () => {
           </tbody>
         </Table>
 
-         <br />
+        <br />
         <h3>Search History</h3>
         <Table striped bordered hover>
           <thead>
