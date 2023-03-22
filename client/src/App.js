@@ -41,7 +41,7 @@ const App = () => {
     console.log({ url })
 
     try {
-      const res = await fetch('http://localhost:3000/', {
+      const res = await fetch('https://word-scraper-one.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
